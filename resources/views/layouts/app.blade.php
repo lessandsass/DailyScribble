@@ -9,7 +9,7 @@
     <title>Daily Scribble</title>
 
 </head>
-<body>
+<body class="bg-gray-900 text-gray-300">
 
     <nav class="p-6 bg-gray-800 text-gray-300 flex justify-between">
         <ul class="flex items-center">

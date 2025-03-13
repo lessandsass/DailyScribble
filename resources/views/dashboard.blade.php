@@ -2,7 +2,11 @@
 
 @section('content')
 
-Dashboard
+<div class="text-slate-300 flex justify-center">
+    <div class="w-6/12 bg-slate-800 p-6 rounded-lg">
+        Dashboard
+    </div>
+</div>
 
 @endsection
 
