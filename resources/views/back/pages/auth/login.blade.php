@@ -5,6 +5,10 @@
 @section('content')
 
     <form class="max-w-md md:ml-auto w-full">
+
+        <x-form-alerts></x-form-alerts>
+        @csrf
+
         <h3 class="text-slate-900 lg:text-3xl text-2xl font-bold mb-8">
             Sign in
         </h3>
@@ -13,13 +17,36 @@
 
             <div>
                 <label class='text-sm text-slate-800 font-medium mb-2 block'>Email</label>
-                <input name="email" type="email" required class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent" placeholder="Enter Email" />
+                <input
+                    name="login_id"
+                    type="email"
+                    value="{{ old('login_id') }}"
+                    required
+                    class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent"
+                    placeholder="Enter Email / Username"
+                />
             </div>
+            @error('login_id')
+                <span class="text-sm text-red-600">
+                    {{ $message }}
+                </span>
+            @enderror
 
             <div>
                 <label class='text-sm text-slate-800 font-medium mb-2 block'>Password</label>
-                <input name="password" type="password" required class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent" placeholder="Enter Password" />
+                <input
+                    name="password"
+                    type="password"
+                    required
+                    class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent"
+                    placeholder="Enter Password"
+                />
             </div>
+            @error('password')
+                <span class="text-sm text-red-600">
+                    {{ $message }}
+                </span>
+            @enderror
 
             <div class="flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center">
@@ -30,7 +57,7 @@
             </div>
 
             <div class="text-sm">
-                <a href="jajvascript:void(0);" class="text-blue-600 hover:text-blue-500 font-medium">
+                <a href="javascript:void(0);" class="text-blue-600 hover:text-blue-500 font-medium">
                 Forgot your password?
                 </a>
             </div>
